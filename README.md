@@ -8,6 +8,8 @@
 - https://information-system-ics.github.io/ARFlashCard/utils/ar-cards-generator.html
 
 Картки із маркерами можуть бути заздалегідь підготовлені (роздруковані або намальовані) для будь-яких наборів слів двох мов.
+Приклад ArUco-маркерів для 3-х карток
+- https://github.com/Information-System-ICS/ARFlashCard/blob/main/Markers/Aruco_Cards.pdf
 
 ## Основні кроки використання програми:
 1)	додати список англомовних слів;
