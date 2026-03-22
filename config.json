@@ -1,0 +1,159 @@
+{
+  "settings": {
+    "resolution": "high",
+    "welcomeText": "Натисніть для початку роботи<br>з AR-картками вивчення португальских слів"
+  },
+  "markers": [
+    {
+      "id": 1,
+      "type": "barcode",
+      "target": 8,
+      "matrixSize": 20,
+      "contentType": "controller",
+      "controllerConfig": {
+        "bodySize": [5, 5, 35],
+        "tipSize": [5, 5, 10],
+        "bodyColor": "#008000",
+        "tipColor": "#ffffff",
+        "touchColor": "#ff6600",
+        "position": [0, -10, -20],
+        "rotation": [0, 0, 0],
+        "intersectionDelay": 100,
+        "touchSoundDuration": 300,
+        "collisionMode": "2d"
+      }
+    },    
+    {
+      "id": 2,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 0,
+      "matrixSize": 30,      
+      "contentType": "primitive",
+      "primitive": {
+        "type": "BoxGeometry",
+        "size": [37, 5, 37],
+        "textureFile": "en_Man.jpg"
+      },
+      "alternativeContent": {
+        "contentType": "primitive",
+        "primitive": {
+          "type": "BoxGeometry",
+          "size": [55, 10, 55],
+          "textureFile": "en_Man.jpg"
+        }
+      },
+      "audioFile": "en_Man.mp3",
+      "playOnControllerIntersect": true
+    },
+    {
+      "id": 3,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 1,
+      "matrixSize": 30,      
+      "contentType": "primitive",
+      "primitive": {
+        "type": "BoxGeometry",
+        "size": [37, 5, 37],
+        "textureFile": "pt-question.jpg"
+      },
+      "alternativeContent": {
+        "contentType": "primitive",
+        "primitive": {
+          "type": "BoxGeometry",
+          "size": [55, 10, 55],
+          "textureFile": "pt-pt_Homem.jpg"
+        }
+      },
+      "audioFile": "pt-pt_Homem.mp3",
+      "playOnControllerIntersect": true
+    },
+    {
+      "id": 4,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 2,
+      "matrixSize": 30,      
+      "contentType": "primitive",
+      "primitive": {
+        "type": "BoxGeometry",
+        "size": [37, 5, 37],
+        "textureFile": "en_Woman.jpg"
+      },
+      "alternativeContent": {
+        "contentType": "primitive",
+        "primitive": {
+          "type": "BoxGeometry",
+          "size": [45, 10, 45],
+          "textureFile": "en_Woman.jpg"
+        }
+      },
+      "audioFile": "en_Woman.mp3",
+      "playOnControllerIntersect": true
+    },
+    {
+      "id": 5,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 3,
+      "matrixSize": 30,      
+      "contentType": "primitive",
+      "primitive": {
+        "type": "BoxGeometry",
+        "size": [37, 5, 37],
+        "textureFile": "pt-question.jpg"
+      },
+      "alternativeContent": {
+        "contentType": "primitive",
+        "primitive": {
+          "type": "BoxGeometry",
+          "size": [45, 10, 45],
+          "textureFile": "pt-pt_Mulher.jpg"
+        }
+      },
+      "audioFile": "pt-pt_Mulher.mp3",
+      "playOnControllerIntersect": true
+    },
+    {
+      "id": 6,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 4,
+      "matrixSize": 30,      
+      "contentType": "primitive",
+      "primitive": {
+        "type": "BoxGeometry",
+        "size": [37, 5, 37],
+        "textureFile": "en_Dog.jpg"
+      },
+      "alternativeContent": {
+        "contentType": "primitive",
+        "primitive": {
+          "type": "BoxGeometry",
+          "size": [45, 10, 45],
+          "textureFile": "en_Dog.jpg"
+        }
+      },
+      "audioFile": "en_Dog.mp3",
+      "playOnControllerIntersect": true
+    },
+    {
+      "id": 7,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 5,
+      "matrixSize": 30,      
+      "contentType": "primitive",
+      "primitive": {
+        "type": "BoxGeometry",
+        "size": [37, 5, 37],
+        "textureFile": "pt-question.jpg"
+      },
+      "alternativeContent": {
+        "contentType": "primitive",
+        "primitive": {
+          "type": "BoxGeometry",
+          "size": [45, 10, 45],
+          "textureFile": "pt-pt_Cão.jpg"
+        }
+      },
+      "audioFile": "pt-pt_Cão.mp3",
+      "playOnControllerIntersect": true
+    }
+  ]
+}
