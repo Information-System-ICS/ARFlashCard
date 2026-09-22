@@ -27,4 +27,14 @@
 - створення нових ArUco-маркерів - https://tagsgen.top/
 
 ### Демонстрація процесу створення та використання
-- https://youtu.be/8pWg-1x-vFo 
+- https://youtu.be/8pWg-1x-vFo
+
+### Посилання на демонстраційну програму
+
+https://information-system-ics.github.io/ARFlashCard/
+
+<img width="291" height="295" alt="image" src="https://github.com/user-attachments/assets/e6f4a7de-df46-488a-9301-1aff8723d72c" />
+
+
+
+
