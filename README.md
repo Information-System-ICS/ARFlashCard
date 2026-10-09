@@ -33,7 +33,9 @@
 
 https://information-system-ics.github.io/ARFlashCard/
 
-<img width="291" height="295" alt="image" src="https://github.com/user-attachments/assets/e6f4a7de-df46-488a-9301-1aff8723d72c" />
+<img width="220" height="220" alt="image" src="https://github.com/user-attachments/assets/97fe9a1a-de47-4be5-a8ac-472099081689" />
+
+
 
 
 
