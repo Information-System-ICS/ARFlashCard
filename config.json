@@ -26,7 +26,7 @@
     {
       "id": 2,
       "type": "aruco:ARUCO_4X4_1000",
-      "target": 0,
+      "target": 946,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -48,7 +48,7 @@
     {
       "id": 3,
       "type": "aruco:ARUCO_4X4_1000",
-      "target": 1,
+      "target": 164,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -70,7 +70,7 @@
     {
       "id": 4,
       "type": "aruco:ARUCO_4X4_1000",
-      "target": 2,
+      "target": 13,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -92,7 +92,7 @@
     {
       "id": 5,
       "type": "aruco:ARUCO_4X4_1000",
-      "target": 3,
+      "target": 874,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -114,7 +114,7 @@
     {
       "id": 6,
       "type": "aruco:ARUCO_4X4_1000",
-      "target": 4,
+      "target": 959,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -136,7 +136,7 @@
     {
       "id": 7,
       "type": "aruco:ARUCO_4X4_1000",
-      "target": 5,
+      "target": 196,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
