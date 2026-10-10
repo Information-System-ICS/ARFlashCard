@@ -53,19 +53,8 @@ var ArucoMarkerControls = function (arToolkitContext, object3d, parameters, canv
     }
     this.detector = ArucoMarkerControls.detector;
 
-    // Ініціалізація POSIT (один раз для всіх маркерів)
-    // Використовуємо DETECTION_WIDTH для POSIT, а не canvasWidth
-    if (!ArucoMarkerControls.posit) {
-        ArucoMarkerControls.posit = new POS.Posit(this.modelSize, DETECTION_WIDTH);
-        console.log('Posit initialized with modelSize:', this.modelSize, 'and detectionWidth:', DETECTION_WIDTH);
-    }
-    this.posit = ArucoMarkerControls.posit;
-
-    // Обчислюємо корекцію позиції: 10% від розміру маркера
-    // Це компенсує різницю в системах координат між js-aruco2 та AR.js
-    var positionCorrection = this.modelSize * 0.1;
-    this.positionOffsetX = -positionCorrection;
-    this.positionOffsetZ = -positionCorrection;
+    // Ініціалізація POSIT для кожного маркера відповідно до його modelSize
+    this.posit = new POS.Posit(this.modelSize, DETECTION_WIDTH);
 
     // Ініціалізація спільного detection canvas (як у 4x4-3d.html)
     if (!detectionCanvas) {
@@ -83,43 +72,29 @@ var ArucoMarkerControls = function (arToolkitContext, object3d, parameters, canv
 
     /**
      * Функція для оновлення позиції 3D-об'єкта через пряме встановлення quaternion та position.
-     * Цей підхід забезпечує більшу стабільність порівняно з matrix.decompose().
+     * Використовує канонічну орієнтацію POSIT з row-major матрицею та корекцією -PI/2 навколо X.
      * @param {Array} rotation - Матриця обертання 3x3 від POSIT.
      * @param {Array} translation - Вектор переміщення від POSIT.
      */
     var updateObjectPose = function(rotation, translation) {
         var object = _this.object3d;
 
-        // Конвертуємо матрицю обертання з POSIT у формат Three.js
-        // POSIT повертає матрицю у стовпчиковому порядку (column-major)
-        // THREE.Matrix4.set() приймає параметри у рядковому порядку (row-major)
-        // Тому транспонуємо матрицю: rotation[col][row] замість rotation[row][col]
+        // Конвертуємо матрицю обертання з POSIT у формат Three.js (рядок за рядком, row-major)
         var rotMatrix = new THREE.Matrix4();
         rotMatrix.set(
-            rotation[0][0], rotation[1][0], rotation[2][0], 0,  // 1-й рядок (транспоновано)
-            rotation[0][1], rotation[1][1], rotation[2][1], 0,  // 2-й рядок (транспоновано)
-            rotation[0][2], rotation[1][2], rotation[2][2], 0,  // 3-й рядок (транспоновано)
+            rotation[0][0], rotation[0][1], rotation[0][2], 0,
+            rotation[1][0], rotation[1][1], rotation[1][2], 0,
+            rotation[2][0], rotation[2][1], rotation[2][2], 0,
             0, 0, 0, 1
         );
 
-        // Корекція орієнтації: поворот на 90° навколо X осі
-        // Це потрібно, щоб Y вісь об'єкта була перпендикулярна до площини маркера
-        var correctionMatrix = new THREE.Matrix4();
-        correctionMatrix.makeRotationX(Math.PI / 2);
-        rotMatrix.multiply(correctionMatrix);
-
-        // ЗАСТОСУВАТИ ТРАНСФОРМАЦІЮ ARTOOLKIT (Y×π + Z×π)
-        // Це забезпечує однакову поведінку для ArUco та barcode-маркерів
-        if (_this.context && _this.context._artoolkitProjectionAxisTransformMatrix) {
-            var tmpMatrix = new THREE.Matrix4().copy(
-                _this.context._artoolkitProjectionAxisTransformMatrix
-            );
-            tmpMatrix.multiply(rotMatrix);
-            rotMatrix.copy(tmpMatrix);
-        }
-
-        // Встановлюємо кватерніон з матриці обертання з урахуванням корекції
+        // Встановлюємо кватерніон з матриці обертання
         _this.targetQuaternion.setFromRotationMatrix(rotMatrix);
+
+        // Корекція орієнтації: поворот на -90° навколо X осі (як у 4x4-3d.html)
+        // Це вирівнює площину маркера з Three.js та прив'язує обертання 3D-об'єкта до картки
+        var correction = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), -Math.PI / 2);
+        _this.targetQuaternion.multiply(correction);
 
         // Встановлення позиції (інвертуємо Z для узгодження з Three.js)
         _this.targetPosition.set(
@@ -128,10 +103,6 @@ var ArucoMarkerControls = function (arToolkitContext, object3d, parameters, canv
             -translation[2]
         );
 
-        // Корекція позиції: додаємо зміщення
-        _this.targetPosition.x += _this.positionOffsetX;
-        _this.targetPosition.z += _this.positionOffsetZ;
-
         // Ініціалізуємо поточну позицію при першому оновленні
         if (_this.firstUpdate) {
             _this.currentPosition.copy(_this.targetPosition);
@@ -139,10 +110,10 @@ var ArucoMarkerControls = function (arToolkitContext, object3d, parameters, canv
             _this.firstUpdate = false;
         }
 
-        // Ітерполяція позиції (LERP) для плавності
+        // Інтерполяція позиції (LERP) для плавності
         _this.currentPosition.lerp(_this.targetPosition, _this.lerpFactor);
 
-        // Ітерполяція кватерніона (SLERP) для плавного обертання
+        // Інтерполяція кватерніона (SLERP) для плавного обертання
         _this.currentQuaternion.slerp(_this.targetQuaternion, _this.lerpFactor);
 
         // Застосовуємо інтерпольовані значення до об'єкта
