@@ -553,7 +553,19 @@
                     }
                 }
                 if (primitive.rotation) {
-                    mesh.rotation.set(...primitive.rotation);
+                    if (Array.isArray(primitive.rotation)) {
+                        mesh.rotation.set(
+                            degToRad(primitive.rotation[0] || 0),
+                            degToRad(primitive.rotation[1] || 0),
+                            degToRad(primitive.rotation[2] || 0)
+                        );
+                    } else {
+                        mesh.rotation.set(
+                            degToRad(primitive.rotation.x || 0),
+                            degToRad(primitive.rotation.y || 0),
+                            degToRad(primitive.rotation.z || 0)
+                        );
+                    }
                 }
                 
                 if (primitive.animation) {
@@ -1465,7 +1477,19 @@
                                     }
                                 }
                                 if (primitive.rotation) {
-                                    mesh.rotation.set(...primitive.rotation);
+                                    if (Array.isArray(primitive.rotation)) {
+                                        mesh.rotation.set(
+                                            degToRad(primitive.rotation[0] || 0),
+                                            degToRad(primitive.rotation[1] || 0),
+                                            degToRad(primitive.rotation[2] || 0)
+                                        );
+                                    } else {
+                                        mesh.rotation.set(
+                                            degToRad(primitive.rotation.x || 0),
+                                            degToRad(primitive.rotation.y || 0),
+                                            degToRad(primitive.rotation.z || 0)
+                                        );
+                                    }
                                 }
 
                                 // Додаємо до контейнера маркера

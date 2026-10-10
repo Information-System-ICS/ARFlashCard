@@ -32,6 +32,7 @@
       "primitive": {
         "type": "BoxGeometry",
         "size": [37, 2, 37],
+        "rotation": [0, 0, 0],
         "textureFile": "en_Man.jpg"
       },
       "alternativeContent": {
