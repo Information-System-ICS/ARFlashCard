@@ -1,6 +1,6 @@
 {
   "settings": {
-    "resolution": "high",
+    "resolution": "low",
     "welcomeText": "Натисніть тут <br>для початку роботи<br>з AR-Flash-картками <br>вивчення португальских слів"
   },
   "markers": [
