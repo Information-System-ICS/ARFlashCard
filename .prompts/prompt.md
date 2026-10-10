@@ -15,17 +15,3 @@
             font-family: Arial, Helvetica, sans-serif; font-weight: 400; line-height: 1.5em; font-size: large; white-space: nowrap;
             user-select: none; pointer-events: none;
         ">
-
-  #### Варіант 2: Скинути стиль через JavaScript
-
-  Також можна перевизначити стиль безпосередньо у функції updateWelcomeText():
-
-    function updateWelcomeText() {
-        if (config && config.settings && config.settings.welcomeText) {
-
-      ▄▀▀▄        Antigravity CLI 1.3.3
-     ▀▀▀▀▀▀       blazhko@op.edu.ua (Antigravity Starter Quota)
-    ▀▀▀▀▀▀▀▀      Gemini 3.8 Flash (High)
-   ▄▀▀    ▀▀▄     ~/Yoga/ARFlashCard
-  ▄▀▀      ▀▀▄
-
