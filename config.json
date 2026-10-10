@@ -31,7 +31,7 @@
       "contentType": "primitive",
       "primitive": {
         "type": "BoxGeometry",
-        "size": [37, 5, 37],
+        "size": [37, 2, 37],
         "textureFile": "en_Man.jpg"
       },
       "alternativeContent": {
@@ -53,7 +53,7 @@
       "contentType": "primitive",
       "primitive": {
         "type": "BoxGeometry",
-        "size": [37, 5, 37],
+        "size": [37, 2, 37],
         "textureFile": "pt-question.jpg"
       },
       "alternativeContent": {
