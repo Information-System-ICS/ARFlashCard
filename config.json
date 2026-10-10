@@ -1,6 +1,6 @@
 {
   "settings": {
-    "resolution": "high",
+    "resolution": "low",
     "welcomeText": "Натисніть для початку роботи<br>з AR-картками вивчення португальских слів"
   },
   "markers": [
