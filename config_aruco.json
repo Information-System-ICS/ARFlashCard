@@ -25,8 +25,8 @@
     },    
     {
       "id": 2,
-      "type": "barcode",
-      "target": 1,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 946,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -47,8 +47,8 @@
     },
     {
       "id": 3,
-      "type": "barcode",
-      "target": 2,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 164,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -69,8 +69,8 @@
     },
     {
       "id": 4,
-      "type": "barcode",
-      "target": 3,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 13,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -91,8 +91,8 @@
     },
     {
       "id": 5,
-      "type": "barcode",
-      "target": 4,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 874,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -113,8 +113,8 @@
     },
     {
       "id": 6,
-      "type": "barcode",
-      "target": 5,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 959,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -135,8 +135,8 @@
     },
     {
       "id": 7,
-      "type": "barcode",
-      "target": 6,
+      "type": "aruco:ARUCO_4X4_1000",
+      "target": 196,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
