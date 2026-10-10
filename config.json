@@ -1,7 +1,7 @@
 {
   "settings": {
-    "resolution": "low",
-    "welcomeText": "Натисніть для початку роботи<br>з AR-картками вивчення португальских слів"
+    "resolution": "high",
+    "welcomeText": "Натисніть тут <br>для початку роботи<br>з AR-Flash-картками <br>вивчення португальских слів"
   },
   "markers": [
     {
@@ -32,6 +32,7 @@
       "primitive": {
         "type": "BoxGeometry",
         "size": [37, 5, 37],
+        "rotation": [0, 0, 0],
         "textureFile": "en_Man.jpg"
       },
       "alternativeContent": {
