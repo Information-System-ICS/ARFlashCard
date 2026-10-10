@@ -1,7 +1,7 @@
 {
   "settings": {
     "resolution": "high",
-    "welcomeText": "Натисніть для початку роботи<br>з AR-картками вивчення португальских слів"
+    "welcomeText": "Натисніть тут <br>для початку роботи<br>з AR-Flash-картками <br>вивчення португальских слів"
   },
   "markers": [
     {
@@ -25,13 +25,14 @@
     },    
     {
       "id": 2,
-      "type": "aruco:ARUCO_4X4_1000",
-      "target": 946,
+      "type": "barcode",
+      "target": 1,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
         "type": "BoxGeometry",
-        "size": [37, 5, 37],
+        "size": [37, 2, 37],
+        "rotation": [10, 0, 0],
         "textureFile": "en_Man.jpg"
       },
       "alternativeContent": {
@@ -47,13 +48,13 @@
     },
     {
       "id": 3,
-      "type": "aruco:ARUCO_4X4_1000",
-      "target": 164,
+      "type": "barcode",
+      "target": 2,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
         "type": "BoxGeometry",
-        "size": [37, 5, 37],
+        "size": [37, 2, 37],
         "textureFile": "pt-question.jpg"
       },
       "alternativeContent": {
@@ -69,8 +70,8 @@
     },
     {
       "id": 4,
-      "type": "aruco:ARUCO_4X4_1000",
-      "target": 13,
+      "type": "barcode",
+      "target": 3,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -91,8 +92,8 @@
     },
     {
       "id": 5,
-      "type": "aruco:ARUCO_4X4_1000",
-      "target": 874,
+      "type": "barcode",
+      "target": 4,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -113,8 +114,8 @@
     },
     {
       "id": 6,
-      "type": "aruco:ARUCO_4X4_1000",
-      "target": 959,
+      "type": "barcode",
+      "target": 5,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
@@ -135,8 +136,8 @@
     },
     {
       "id": 7,
-      "type": "aruco:ARUCO_4X4_1000",
-      "target": 196,
+      "type": "barcode",
+      "target": 6,
       "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
