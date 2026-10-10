@@ -27,7 +27,7 @@
       "id": 2,
       "type": "aruco:ARUCO_4X4_1000",
       "target": 946,
-      "matrixSize": 15,      
+      "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
         "type": "BoxGeometry",
@@ -50,7 +50,7 @@
       "id": 3,
       "type": "aruco:ARUCO_4X4_1000",
       "target": 164,
-      "matrixSize": 15,      
+      "matrixSize": 30,      
       "contentType": "primitive",
       "primitive": {
         "type": "BoxGeometry",
